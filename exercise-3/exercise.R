@@ -14,7 +14,7 @@ library(fueleconomy)
 
 # Which Accura model has the best hwy MPG in 2015? (without method chaining)
 best.model <- filter(wehicles, make == 'Acura', year ==2015) %>%
-  filter(hwy == max9hwy)) %>%
+  filter(hwy == max(hwy)) %>%
   select(model)
 
 # Which Accura model has the best hwy MPG in 2015? (nesting functions)
