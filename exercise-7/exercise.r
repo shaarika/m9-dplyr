@@ -41,3 +41,10 @@ offense.stats <- select(team.data, Team, ORB, FG, AST)
 # Create a function called `BetterShooters` that takes in two teams and returns
 # a data.frame of the team with the better field-goal percentage. The returned 
 # data.frame should include the team name, field-goal percentage, and points.
+BetterShootsers <- function(team1, team2) {
+  better.team <- filter(Team %>% c(team1, team2)) %>%
+    filter(FG == max(FG.)) %>%
+    select(TEAM, FG., PTS)
+  return(better.team)
+}
+
